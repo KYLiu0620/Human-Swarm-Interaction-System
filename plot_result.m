@@ -41,6 +41,7 @@ hold on
 for num = [1 4 7 10 13 16]
     plot3(q_s(1,num),q_s(1,num+1),q_s(1,num+2),'o');
     plot3(q_s(:,num),q_s(:,num+1),q_s(:,num+2));
+    drawnow
 end
 plot3(X_m(:,1),X_m(:,2),X_m(:,3),'--');
 xlabel('x');
@@ -49,9 +50,10 @@ zlabel('z');
 hold off
 
 figure(2)
-robot=4;
+index=4;
+suptitle(['robot ' num2str(index)]);
 subplot(2,1,1)
-plot(t,q_s(:,robot));
+plot(t,q_s(:,index));
 subplot(2,1,2)
-plot(t,q_s(:,robot+1));
+plot(t,q_s(:,index+1));
 %% master plot
